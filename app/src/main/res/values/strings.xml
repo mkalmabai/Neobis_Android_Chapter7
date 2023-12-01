@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Lorby</string>
+    <string name="lorby">Lorby</string>
+    <string name="repititor">Твой личный репетитор</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="welcome">Вэлком бэк!</string>
+    <string name="userlogininput">Введи туда-сюда логин</string>
+    <string name="inputPassword">Пароль (тоже введи)</string>
+    <string name="login">Войти</string>
+    <string name="register">У меня еще нет аккаунта</string>
 </resources>

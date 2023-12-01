@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".LoginFragment">
+
+    <ImageView
+        android:id="@+id/ivSignIn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/globus"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/welcome"
+        android:textSize="24sp"
+        android:textColor="@color/mainBlack"
+        android:fontFamily="@font/medium"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="32dp"/>
+
+    <EditText
+        android:id="@+id/etLogin"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:hint="@string/userlogininput"
+        android:fontFamily="@font/medium"
+        android:textColorHint="@color/mediumDark"
+        android:background="@drawable/background_edittext"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginTop="28dp"
+        android:paddingHorizontal="16dp"/>
+
+    <EditText
+        android:id="@+id/etPassword"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:textColorHint="@color/mediumDark"
+        android:fontFamily="@font/medium"
+        android:background="@drawable/background_edittext"
+        android:layout_marginHorizontal="16dp"
+        android:hint="@string/inputPassword"
+        android:paddingHorizontal="16dp"
+        android:layout_marginTop="14dp" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:layout_marginTop="24dp"
+        android:background="@drawable/background_button"
+        android:layout_marginHorizontal="16dp"
+        android:fontFamily="@font/medium"
+        android:text="@string/login"
+        android:textSize="14sp"
+        android:textColor="@color/white"
+        android:textAllCaps="false"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/register"
+        android:fontFamily="@font/medium"
+        android:textSize="16sp"
+        android:textColor="@color/mainBlack"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="41dp"/>
+</LinearLayout>
