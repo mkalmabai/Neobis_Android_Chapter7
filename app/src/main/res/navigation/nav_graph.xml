@@ -6,7 +6,7 @@
     app:startDestination="@id/splashScreenFragment">
     <fragment
         android:id="@+id/splashScreenFragment"
-        android:name="com.example.lorby.SplashScreenFragment"
+        android:name="com.example.lorby.ui.fragments.SplashScreenFragment"
         android:label="SplashScreenFragment" >
         <action
             android:id="@+id/action_splashScreenFragment_to_loginFragment2"
@@ -14,16 +14,37 @@
     </fragment>
     <fragment
         android:id="@+id/loginFragment2"
-        android:name="com.example.lorby.LoginFragment"
+        android:name="com.example.lorby.ui.fragments.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
             android:id="@+id/action_loginFragment2_to_registerFragment"
             app:destination="@id/registerFragment" />
+        <action
+            android:id="@+id/action_loginFragment2_to_mainFragment2"
+            app:destination="@id/mainFragment" />
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
-        android:name="com.example.lorby.RegisterFragment"
+        android:name="com.example.lorby.ui.fragments.RegisterFragment"
         android:label="fragment_register"
-        tools:layout="@layout/fragment_register" />
+        tools:layout="@layout/fragment_register" >
+        <action
+            android:id="@+id/action_registerFragment_to_mailAuthFragment"
+            app:destination="@id/mailAuthFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.lorby.ui.fragments.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" />
+    <fragment
+        android:id="@+id/mailAuthFragment"
+        android:name="com.example.lorby.ui.fragments.MailAuthFragment"
+        android:label="fragment_mail_auth"
+        tools:layout="@layout/fragment_mail_auth" >
+        <action
+            android:id="@+id/action_mailAuthFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
 </navigation>

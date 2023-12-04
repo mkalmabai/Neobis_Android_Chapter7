@@ -1,4 +1,4 @@
-package com.example.lorby
+package com.example.lorby.ui.fragments
 
 import android.os.Bundle
 import android.os.Handler
@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import com.example.lorby.R
 
 class SplashScreenFragment : Fragment() {
     private val delayMillis = 1500

@@ -1,14 +1,199 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RegisterFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".ui.fragments.RegisterFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content">
 
-</FrameLayout>
+        <ImageView
+            android:id="@id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginVertical="10dp"
+            android:padding="5dp"
+            android:src="@drawable/backicon"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/register3"
+            android:textSize="20sp"
+            android:fontFamily="@font/medium"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        >
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/registerTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="50dp"
+                android:layout_marginTop="40dp"
+                android:gravity="center_horizontal"
+                android:text="@string/createAcc"
+                android:textColor="@color/black"
+                android:textSize="32sp"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+
+            <EditText
+                android:id="@+id/inputMail"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="40dp"
+                android:background="@drawable/background_edittext"
+                android:fontFamily="@font/medium"
+                android:hint="@string/inputmail"
+                android:paddingHorizontal="16dp"
+                android:textColorHint="@color/mediumDark"
+                app:layout_constraintTop_toBottomOf="@+id/registerTitle" />
+            <EditText
+                android:id="@+id/createUserName"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="14dp"
+                android:background="@drawable/background_edittext"
+                android:fontFamily="@font/medium"
+                android:hint="@string/createUsername"
+                android:paddingHorizontal="16dp"
+                android:textColorHint="@color/mediumDark"
+                app:layout_constraintTop_toBottomOf="@+id/inputMail" />
+
+            <EditText
+                android:id="@+id/passwordview1"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="14dp"
+                android:background="@drawable/background_edittext"
+                android:fontFamily="@font/medium"
+                android:hint="Создай пароль"
+                android:paddingHorizontal="16dp"
+                android:textColorHint="@color/mediumDark"
+                app:layout_constraintTop_toBottomOf="@+id/createUserName" />
+
+            <TextView
+                android:id="@+id/pwlenght"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginStart="20dp"
+                android:drawablePadding="6dp"
+                android:text="@string/warningscharacters"
+                android:textColor="@color/mediumDark"
+                android:textSize="12sp"
+                android:fontFamily="@font/medium"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/passwordview1"
+                app:drawableStartCompat="@drawable/dot" />
+
+            <TextView
+                android:id="@+id/pwCase"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="6dp"
+                android:drawablePadding="6dp"
+                android:text="@string/warningSimpleword"
+                android:textColor="@color/mediumDark"
+                android:textSize="12sp"
+                android:fontFamily="@font/medium"
+                app:drawableStartCompat="@drawable/dot"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/pwlenght" />
+            <TextView
+                android:id="@+id/pwDigit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="6dp"
+                android:drawablePadding="6dp"
+                android:text="@string/warningnumber"
+                android:textColor="@color/mediumDark"
+                android:textSize="12sp"
+                android:fontFamily="@font/medium"
+                app:drawableStartCompat="@drawable/dot"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/pwCase" />
+            <TextView
+                android:id="@+id/pwSpecialCharacter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="6dp"
+                android:drawablePadding="6dp"
+                android:text="@string/warningSpecialCharcter"
+                android:textColor="@color/mediumDark"
+                android:textSize="12sp"
+                android:fontFamily="@font/medium"
+                app:drawableStartCompat="@drawable/dot"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/pwDigit" />
+
+            <EditText
+                android:id="@+id/passwordview2"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="14dp"
+                android:background="@drawable/background_edittext"
+                android:fontFamily="@font/medium"
+                android:hint="Повтори пароль"
+                android:paddingHorizontal="16dp"
+                android:textColorHint="@color/mediumDark"
+                app:layout_constraintTop_toBottomOf="@+id/pwSpecialCharacter"
+                tools:layout_editor_absoluteX="16dp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/signUp"
+                android:layout_width="match_parent"
+                android:layout_height="58dp"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/background_signup"
+                android:fontFamily="@font/medium"
+                android:text="@string/further"
+                android:textAllCaps="false"
+                android:textColor="@color/mediumDark"
+                android:textSize="14sp"
+                app:layout_constraintTop_toBottomOf="@+id/passwordview2" />
+
+
+
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+
+
+
+
+
+</LinearLayout>

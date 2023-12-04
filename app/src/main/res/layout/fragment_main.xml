@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -8,24 +9,36 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/lorby"
+        android:text="@string/welcomeback"
         android:fontFamily="@font/medium"
-        android:textSize="55sp"
+        android:textSize="30sp"
         android:textColor="@color/black"
         />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/repititor"
+        android:text="@string/repititor2"
         android:fontFamily="@font/medium"
         android:layout_margin="20dp"
-        android:textColor="@color/black"
-        android:textSize="22sp"/>
+        android:textSize="22dp"
+        android:textColor="@color/black"/>
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/mianimg"
         />
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginHorizontal="25dp"
+        android:background="@drawable/background_main_button"
+        android:text="@string/logout"
+        android:fontFamily="@font/medium"
+        android:textAllCaps="false"
+        android:elevation="0dp"
+        android:textColor="@color/black"/>
+
 </LinearLayout>

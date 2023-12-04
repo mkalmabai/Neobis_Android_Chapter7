@@ -9,4 +9,20 @@
     <string name="inputPassword">Пароль (тоже введи)</string>
     <string name="login">Войти</string>
     <string name="register">У меня еще нет аккаунта</string>
+    <string name="repititor2">Lorby - твой личный репетитор</string>
+    <string name="welcomeback">С возвращением!</string>
+    <string name="logout">Выйти</string>
+    <string name="register3">Регистрация</string>
+    <string name="createAcc">Создать аккаунт Lorby</string>
+    <string name="inputmail">Введи адрес почты</string>
+    <string name="createUsername">Придумай логин</string>
+    <string name="warningscharacters">От 8 до 15 символов</string>
+    <string name="warningSimpleword">Строчные и прописные буквы</string>
+    <string name="warningnumber">Минимум 1 цифра</string>
+    <string name="warningSpecialCharcter">Минимум 1 спецсимвол (!, \", #, $...)</string>
+    <string name="further">Далее</string>
+    <string name="sendingLetter">Выслали письмо со ссылкой для завершения регистрации на example@gmail.com</string>
+    <string name="checkSpam">Если письмо не пришло, не спеши ждать совиную почту - лучше проверь ящик “Спам”
+                                                                                            (´｡• ω •｡`)</string>
+    <string name="notArivedLetter">Письмо не пришло</string>
 </resources>

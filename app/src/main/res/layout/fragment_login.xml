@@ -5,10 +5,9 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    tools:context=".LoginFragment">
+    tools:context=".ui.fragments.LoginFragment">
 
     <ImageView
-        android:id="@+id/ivSignIn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -26,7 +25,7 @@
         android:layout_marginTop="32dp"/>
 
     <EditText
-        android:id="@+id/etLogin"
+        android:id="@+id/input_login"
         android:layout_width="match_parent"
         android:layout_height="52dp"
         android:hint="@string/userlogininput"
@@ -38,7 +37,7 @@
         android:paddingHorizontal="16dp"/>
 
     <EditText
-        android:id="@+id/etPassword"
+        android:id="@+id/input_password"
         android:layout_width="match_parent"
         android:layout_height="52dp"
         android:textColorHint="@color/mediumDark"
@@ -49,7 +48,8 @@
         android:paddingHorizontal="16dp"
         android:layout_marginTop="14dp" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/signIn"
         android:layout_width="match_parent"
         android:layout_height="58dp"
         android:layout_marginTop="24dp"
@@ -61,6 +61,7 @@
         android:textColor="@color/white"
         android:textAllCaps="false"/>
     <TextView
+        android:id="@+id/register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/register"

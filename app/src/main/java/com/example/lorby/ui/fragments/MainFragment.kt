@@ -1,23 +1,20 @@
-package com.example.lorby
+package com.example.lorby.ui.fragments
 
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.lorby.R
 
-
-class LoginFragment : Fragment() {
-
+class MainFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_login, container, false)
-        return view
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_main, container, false)
     }
 
 }
