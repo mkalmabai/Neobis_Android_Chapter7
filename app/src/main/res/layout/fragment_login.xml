@@ -34,19 +34,40 @@
         android:background="@drawable/background_edittext"
         android:layout_marginHorizontal="16dp"
         android:layout_marginTop="28dp"
-        android:paddingHorizontal="16dp"/>
-
-    <EditText
-        android:id="@+id/input_password"
-        android:layout_width="match_parent"
-        android:layout_height="52dp"
-        android:textColorHint="@color/mediumDark"
-        android:fontFamily="@font/medium"
-        android:background="@drawable/background_edittext"
-        android:layout_marginHorizontal="16dp"
-        android:hint="@string/inputPassword"
         android:paddingHorizontal="16dp"
-        android:layout_marginTop="14dp" />
+        android:singleLine="true"
+        />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/passwordInputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginHorizontal="16dp"
+        app:passwordToggleEnabled="true"
+        app:boxStrokeWidth="0dp"
+        app:boxBackgroundMode="none"
+        app:boxStrokeColor="@color/mediumDark"
+        app:passwordToggleTint="@color/mediumDark"
+        app:hintEnabled="false"
+       >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inputPassword"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:background="@drawable/background_edittext"
+            android:ems="10"
+            android:fontFamily="@font/medium"
+            android:hint="@string/inputPassword"
+            android:inputType="textPassword"
+            android:textColorHint="@color/mediumDark"
+            android:gravity="center_vertical"
+            android:paddingVertical="1dp"
+            android:layout_gravity="center_vertical"
+
+            />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/signIn"

@@ -25,4 +25,6 @@
     <string name="checkSpam">Если письмо не пришло, не спеши ждать совиную почту - лучше проверь ящик “Спам”
                                                                                             (´｡• ω •｡`)</string>
     <string name="notArivedLetter">Письмо не пришло</string>
+    <string name="createPassword">Создай пароль</string>
+    <string name="repeatPassword">Повтори пароль</string>
 </resources>
