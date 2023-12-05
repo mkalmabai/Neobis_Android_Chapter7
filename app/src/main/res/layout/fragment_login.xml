@@ -25,7 +25,7 @@
         android:layout_marginTop="32dp"/>
 
     <EditText
-        android:id="@+id/input_login"
+        android:id="@+id/inputLogin"
         android:layout_width="match_parent"
         android:layout_height="52dp"
         android:hint="@string/userlogininput"

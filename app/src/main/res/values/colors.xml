@@ -11,4 +11,5 @@
     <color name="mainBlack">#292929</color>
     <color name="mediumDark">#767676</color>
     <color name="grey_dark">#D7D7D7</color>
+    <color name="red">#EC0000</color>
 </resources>
