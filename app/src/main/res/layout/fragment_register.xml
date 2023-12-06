@@ -213,6 +213,7 @@
                 android:layout_marginHorizontal="16dp"
                 android:layout_marginTop="24dp"
                 android:background="@drawable/background_signup"
+                android:enabled="false"
                 android:fontFamily="@font/medium"
                 android:text="@string/further"
                 android:textAllCaps="false"

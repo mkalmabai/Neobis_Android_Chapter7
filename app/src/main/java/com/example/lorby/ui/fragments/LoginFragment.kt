@@ -44,6 +44,9 @@ class LoginFragment : Fragment() {
                 showSnackbar.showCustomSnackbar(requireContext(),binding.root,"Заполните все поля")
             } else {
                 // Continue with the sign-in logic
+                binding.signIn.setOnClickListener{
+                    findNavController().navigate(R.id.action_loginFragment2_to_mainFragment2)
+                }
             }
         })
 
@@ -62,9 +65,7 @@ class LoginFragment : Fragment() {
 
     }
     private fun navigation() {
-        binding.signIn.setOnClickListener{
-            findNavController().navigate(R.id.action_loginFragment2_to_mainFragment2)
-        }
+
         binding.register.setOnClickListener {
             findNavController().navigate(R.id.action_loginFragment2_to_registerFragment)
         }
