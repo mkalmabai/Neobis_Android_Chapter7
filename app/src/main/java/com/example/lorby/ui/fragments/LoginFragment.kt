@@ -1,5 +1,6 @@
 package com.example.lorby.ui.fragments
 
+import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -10,8 +11,11 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.lorby.R
+import com.example.lorby.api.Repository
 import com.example.lorby.databinding.FragmentLoginBinding
+import com.example.lorby.model.Data
 import com.example.lorby.utils.showSnackbar
+import com.example.lorby.viewModel.RegViewModelProviderFactory
 import com.example.lorby.viewModel.RegistrationViewModel
 
 
@@ -23,7 +27,9 @@ class LoginFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
         binding = FragmentLoginBinding.inflate(inflater,container,false)
+
         return binding.root
     }
 
@@ -31,11 +37,15 @@ class LoginFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         navigation()
 
+        val data: Uri? = requireActivity().intent?.data
+        Data.token = data?.getQueryParameter("token").toString()
+        if (Data.token!=null){
 
+        }
+        val repository = Repository()
+        val viewModelFactory = RegViewModelProviderFactory(repository)
+        viewModel = ViewModelProvider(this, viewModelFactory).get(RegistrationViewModel::class.java)
 
-
-        // Initialize ViewModel
-        viewModel = ViewModelProvider(this).get(RegistrationViewModel::class.java)
 
         // Observe loginResult LiveData
         viewModel.loginResult.observe(viewLifecycleOwner, Observer { isValid ->
