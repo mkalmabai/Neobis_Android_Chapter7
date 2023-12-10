@@ -7,6 +7,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.lorby.api.Repository
 import com.example.lorby.model.RegistrationRequest
+import com.example.lorby.model.TokenRequest
 import com.example.lorby.utils.Resource
 import kotlinx.coroutines.launch
 
@@ -17,9 +18,9 @@ class RegistrationViewModel(private  var repository: Repository) : ViewModel() {
     val userSaved: LiveData<Resource<Boolean>>
         get() = _userSaved
 
-//    private val _userSaved: MutableLiveData<Resource<Boolean>> = MutableLiveData()
-//    val userSaved: LiveData<Resource<Boolean>>
-//        get() = _userSaved
+    private val _tokens: MutableLiveData<Resource<Boolean>> = MutableLiveData()
+    val tokens: LiveData<Resource<Boolean>>
+        get() = _tokens
 
     private val _loginResult = MutableLiveData<Boolean>()
     val loginResult: LiveData<Boolean>
@@ -46,10 +47,38 @@ class RegistrationViewModel(private  var repository: Repository) : ViewModel() {
                     _userSaved.postValue(Resource.Error("Ошибка регистрации"))
                 }
             } catch (e: Exception) {
-                Log.e("MyViewModel", "Ошибка регистрации: ${e.message}")
+                Log.e("ViewModel", "Ошибка регистрации: ${e.message}")
 
                 _userSaved.postValue(Resource.Error(e.message ?: "Ошибка регистрации"))
             }
         }
     }
+    fun login(username: String, password: String) {
+        viewModelScope.launch {
+            try {
+                val loginRequest = TokenRequest(password, username)
+                val response = repository.login(loginRequest)
+                if (response.isSuccessful) {
+                    _tokens.postValue(Resource.Loading())
+                    val loginResponse = response.body()
+                    if (loginResponse != null) {
+                        val token = loginResponse.token
+
+                        if (token != null) {
+                            _tokens.postValue(Resource.Success(true))
+                        } else {
+                            _tokens.postValue(Resource.Error("Token is null in the response"))
+                        }
+                    }
+                }else{
+                    _tokens.postValue(Resource.Loading())
+                    _tokens.postValue(Resource.Error("Ошибка авторизации"))
+                }
+            } catch (e: Exception) {
+                Log.e("ViewModel", "Ошибка авторизации: ${e.message}")
+                _tokens.postValue(Resource.Error(e.message ?: "Ошибка авторизации"))
+            }
+        }
+    }
+
 }

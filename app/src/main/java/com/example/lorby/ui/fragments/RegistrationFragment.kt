@@ -3,6 +3,7 @@ package com.example.lorby.ui.fragments
 import android.annotation.SuppressLint
 import android.content.res.ColorStateList
 import android.graphics.Color
+import android.net.Uri
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -20,6 +21,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.lorby.R
 import com.example.lorby.api.Repository
 import com.example.lorby.databinding.FragmentRegisterBinding
+import com.example.lorby.model.Data
 import com.example.lorby.utils.Resource
 import com.example.lorby.viewModel.RegViewModelProviderFactory
 import com.example.lorby.viewModel.RegistrationViewModel
@@ -66,6 +68,8 @@ class RegistrationFragment : Fragment() {
 
             registrationViewModel.newUser(inputMail.text.toString(), inputUserName.text.toString(), inputPassword.text.toString())
             observe()
+
+
 
         }
         binding.back.setOnClickListener {
