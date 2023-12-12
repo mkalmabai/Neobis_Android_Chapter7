@@ -9,10 +9,8 @@ import retrofit2.http.Body
 import retrofit2.http.POST
 
 interface Api {
-
     @POST("/auth/authenticate/")
     suspend fun login( @Body tokenRequest: TokenRequest): Response<TokenResponse>
-
     @POST("/auth/registration")
     suspend fun registration( @Body registration:RegistrationRequest):Response<RegistrationResponse>
 }

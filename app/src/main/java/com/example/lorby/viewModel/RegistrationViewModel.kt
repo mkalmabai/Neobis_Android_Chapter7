@@ -12,22 +12,16 @@ import com.example.lorby.utils.Resource
 import kotlinx.coroutines.launch
 
 class RegistrationViewModel(private  var repository: Repository) : ViewModel() {
-
-
     private val _userSaved :MutableLiveData<Resource<Boolean>> = MutableLiveData()
     val userSaved: LiveData<Resource<Boolean>>
         get() = _userSaved
-
     private val _tokens: MutableLiveData<Resource<Boolean>> = MutableLiveData()
     val tokens: LiveData<Resource<Boolean>>
         get() = _tokens
-
     private val _loginResult = MutableLiveData<Boolean>()
     val loginResult: LiveData<Boolean>
         get() = _loginResult
-
     fun validateLogin(login: String, password: String): Boolean {
-
         val isValid = !login.isEmpty() && !password.isEmpty()
         _loginResult.value = isValid
         return isValid
@@ -63,7 +57,6 @@ class RegistrationViewModel(private  var repository: Repository) : ViewModel() {
                     val loginResponse = response.body()
                     if (loginResponse != null) {
                         val token = loginResponse.token
-
                         if (token != null) {
                             _tokens.postValue(Resource.Success(true))
                         } else {

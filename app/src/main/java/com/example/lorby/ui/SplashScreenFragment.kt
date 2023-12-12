@@ -1,4 +1,4 @@
-package com.example.lorby.ui.fragments
+package com.example.lorby.ui
 
 import android.os.Bundle
 import android.os.Handler
@@ -20,7 +20,6 @@ class SplashScreenFragment : Fragment() {
             Looper.getMainLooper()).postDelayed({
                 findNavController().navigate(R.id.action_splashScreenFragment_to_loginFragment2)
         }, delayMillis.toLong())
-
         return inflater.inflate(R.layout.fragment_splash_screen, container, false)
     }
 

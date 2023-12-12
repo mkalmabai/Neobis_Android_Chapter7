@@ -12,7 +12,6 @@ import com.example.lorby.R
 import com.google.android.material.snackbar.Snackbar
 
 class showSnackbar {
-
     companion object {
         fun showCustomSnackbar(
             context: Context,

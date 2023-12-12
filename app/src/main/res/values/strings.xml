@@ -21,10 +21,14 @@
     <string name="warningnumber">Минимум 1 цифра</string>
     <string name="warningSpecialCharcter">Минимум 1 спецсимвол (!, \", #, $...)</string>
     <string name="further">Далее</string>
-    <string name="sendingLetter">Выслали письмо со ссылкой для завершения регистрации на example@gmail.com</string>
+    <string name="sendingLetter">Выслали письмо со ссылкой\n для завершения регистрации\n на %s </string>
     <string name="checkSpam">Если письмо не пришло, не спеши ждать совиную почту - лучше проверь ящик “Спам”
                                                                                             (´｡• ω •｡`)</string>
     <string name="notArivedLetter">Письмо не пришло</string>
     <string name="createPassword">Создай пароль</string>
     <string name="repeatPassword">Повтори пароль</string>
+    <string name="alertDialogLetter">Мы выслали еще одно письмо\n на указанную тобой почту\n %s</string>
+    <string name="spamAlert">Не забудь проверить\n ящик “Спам”!11!!!!</string>
+    <string name="okey">Понятно!!1!</string>
+    <string name="welcome2">Добро пожаловать!</string>
 </resources>

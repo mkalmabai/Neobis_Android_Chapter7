@@ -39,6 +39,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
+        android:id="@+id/authText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/sendingLetter"

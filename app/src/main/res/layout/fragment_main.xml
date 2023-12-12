@@ -7,9 +7,10 @@
     android:gravity="center">
 
     <TextView
+        android:id="@+id/welcome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/welcomeback"
+        android:text="@string/welcome2"
         android:fontFamily="@font/medium"
         android:textSize="30sp"
         android:textColor="@color/black"
@@ -30,6 +31,7 @@
         android:src="@drawable/mianimg"
         />
     <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/returnButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"

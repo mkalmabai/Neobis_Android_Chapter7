@@ -1,9 +1,5 @@
 package com.example.lorby.ui.fragments
 
-import android.annotation.SuppressLint
-import android.content.res.ColorStateList
-import android.graphics.Color
-import android.net.Uri
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -12,8 +8,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.EditText
-import android.widget.TextView
 import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.ViewModelProvider
@@ -21,11 +15,10 @@ import androidx.navigation.fragment.findNavController
 import com.example.lorby.R
 import com.example.lorby.api.Repository
 import com.example.lorby.databinding.FragmentRegisterBinding
-import com.example.lorby.model.Data
 import com.example.lorby.utils.Resource
+import com.example.lorby.utils.showSnackbar
 import com.example.lorby.viewModel.RegViewModelProviderFactory
 import com.example.lorby.viewModel.RegistrationViewModel
-import com.google.android.material.color.ColorContrast
 
 
 class RegistrationFragment : Fragment() {
@@ -35,8 +28,6 @@ class RegistrationFragment : Fragment() {
     var isLoginValid = false
     var isPasswordValid = false
     var isPasswordRepeatValid = false
-
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -45,11 +36,9 @@ class RegistrationFragment : Fragment() {
         val repository = Repository()
         val viewModelFactory = RegViewModelProviderFactory(repository)
         registrationViewModel = ViewModelProvider(this, viewModelFactory).get(RegistrationViewModel::class.java)
-
         binding = FragmentRegisterBinding.inflate(inflater,container,false)
         return binding.root
     }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val inputMail= binding.inputMail
@@ -65,12 +54,8 @@ class RegistrationFragment : Fragment() {
         binding.signUp.isEnabled = false
         binding.signUp.setBackgroundResource(R.drawable.background_signup)
         binding.signUp.setOnClickListener{
-
             registrationViewModel.newUser(inputMail.text.toString(), inputUserName.text.toString(), inputPassword.text.toString())
             observe()
-
-
-
         }
         binding.back.setOnClickListener {
             findNavController().navigateUp()
@@ -78,22 +63,22 @@ class RegistrationFragment : Fragment() {
 
     }
     private fun observe() {
-        registrationViewModel.userSaved.observe(viewLifecycleOwner, {userSaved->
-            when(userSaved) {
+        registrationViewModel.userSaved.observe(viewLifecycleOwner) { userSaved ->
+            when (userSaved) {
                 is Resource.Success -> {
-                    findNavController().navigate(R.id.action_registerFragment_to_mailAuthFragment)
+                    var mail = binding.inputMail.text.toString()
+                    val action = RegistrationFragmentDirections.actionRegisterFragmentToMailAuthFragment(mail)
+                    findNavController().navigate(action)
                 }
-
                 is Resource.Error -> {
-
-                    Toast.makeText(requireContext(), "Пользователь не зарегестрирован", Toast.LENGTH_SHORT).show()
+                    showSnackbar.showCustomSnackbar(requireContext(),binding.root,"Пользователь не зарегестрирован")
                 }
 
                 is Resource.Loading -> {
                     Toast.makeText(requireContext(), "Loading", Toast.LENGTH_SHORT).show()
                 }
             }
-        })
+        }
     }
     private fun updateButtonState() {
         if (isEmailValid && isLoginValid && isPasswordValid && isPasswordRepeatValid) {
@@ -110,9 +95,7 @@ class RegistrationFragment : Fragment() {
     private val inputs = object : TextWatcher{
         override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
         }
-
         override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-
         }
         override fun afterTextChanged(p0: Editable?) {
             val inputText = p0.toString()
@@ -122,7 +105,6 @@ class RegistrationFragment : Fragment() {
             updateRepeatPasswordCheck(binding.inputPassword.text.toString(),binding.inputRepeatPassword.text.toString())
             updateButtonState()
         }
-
     }
     private fun  checkLogin(loginText: String){
         val mathesLogin = loginText.matches(Regex("[A-Za-z]*"))
@@ -187,9 +169,6 @@ class RegistrationFragment : Fragment() {
                 binding.pwSpecialCharacter.setTextColor(ContextCompat.getColor(requireContext(), R.color.red))
             }
         }
-
-
-
     }
     private fun updateRepeatPasswordCheck(originalPassword: String, repeatedPassword: String) {
         val repeatPasswordCheck = binding.inputRepeatPassword

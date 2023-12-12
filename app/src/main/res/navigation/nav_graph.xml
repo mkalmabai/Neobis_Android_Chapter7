@@ -6,7 +6,7 @@
     app:startDestination="@id/splashScreenFragment">
     <fragment
         android:id="@+id/splashScreenFragment"
-        android:name="com.example.lorby.ui.fragments.SplashScreenFragment"
+        android:name="com.example.lorby.ui.SplashScreenFragment"
         android:label="SplashScreenFragment" >
         <action
             android:id="@+id/action_splashScreenFragment_to_loginFragment2"
@@ -23,6 +23,8 @@
         <action
             android:id="@+id/action_loginFragment2_to_mainFragment2"
             app:destination="@id/mainFragment" />
+
+
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
@@ -37,7 +39,14 @@
         android:id="@+id/mainFragment"
         android:name="com.example.lorby.ui.fragments.MainFragment"
         android:label="fragment_main"
-        tools:layout="@layout/fragment_main" />
+        tools:layout="@layout/fragment_main" >
+        <argument
+            android:name="title"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_mainFragment_to_splashScreenFragment"
+            app:destination="@id/splashScreenFragment" />
+    </fragment>
     <fragment
         android:id="@+id/mailAuthFragment"
         android:name="com.example.lorby.ui.fragments.MailAuthFragment"
@@ -46,5 +55,11 @@
         <action
             android:id="@+id/action_mailAuthFragment_to_mainFragment"
             app:destination="@id/mainFragment" />
+        <deepLink
+            android:id="@+id/deepLink_activate"
+            app:uri="http://164.90.185.42:8081/auth/activate?token={token}" />
+        <argument
+            android:name="mail"
+            app:argType="string" />
     </fragment>
 </navigation>
